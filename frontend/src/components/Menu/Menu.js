@@ -5,8 +5,10 @@ import './Menu.css';
 import logo_main from '../../assets/logos/logo_main.png';
 import groups from '../../assets/icons/groups.png';
 import hotel from '../../assets/icons/hotel.png';
+import guide from '../../assets/icons/guide.png';
 import quotation from '../../assets/icons/quotation.png';
 import invoice from '../../assets/icons/invoice.png';
+import settings from '../../assets/icons/settings.png';
 
 export const Menu = () => {
   return (
@@ -18,16 +20,24 @@ export const Menu = () => {
           <p className='menu__item__caption'>Dossiers</p>
         </li>
         <li className='menu__item'>
-          <img src={hotel} className='menu__icon' alt='Hôtels' />
-          <p className='menu__item__caption'>Hôtels</p>
+          <img src={hotel} className='menu__icon' alt='Hotele' />
+          <p className='menu__item__caption'>Hotele</p>
         </li>
         <li className='menu__item'>
-          <img src={quotation} className='menu__icon' alt='Cotations' />
-          <p className='menu__item__caption'>Cotations</p>
+          <img src={guide} className='menu__icon' alt='Piloci' />
+          <p className='menu__item__caption'>Piloci</p>
         </li>
         <li className='menu__item'>
-          <img src={invoice} className='menu__icon' alt='Factures' />
-          <p className='menu__item__caption'>Factures</p>
+          <img src={quotation} className='menu__icon' alt='Kotacje' />
+          <p className='menu__item__caption'>Kotacje</p>
+        </li>
+        <li className='menu__item'>
+          <img src={invoice} className='menu__icon' alt='Faktury' />
+          <p className='menu__item__caption'>Faktury</p>
+        </li>
+        <li className='menu__item'>
+          <img src={settings} className='menu__icon' alt='Ustawienia' />
+          <p className='menu__item__caption'>Ustawienia</p>
         </li>
       </ul>
     </nav>

@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import './App.css';
 
 import { Menu } from './components/Menu/Menu.js';
+import { DossierRow } from './components/Dossiers/DossierRow.js';
 
 class App extends Component {
   state = {
@@ -12,7 +13,12 @@ class App extends Component {
   };
 
   render() {
-    return <Menu />;
+    return (
+      <section>
+        <Menu />
+        <DossierRow />
+      </section>
+    );
   }
 }
 
