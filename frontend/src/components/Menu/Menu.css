@@ -1,0 +1,30 @@
+.logo_main {
+  max-width: 200px;
+}
+
+.menu {
+  display: flex;
+}
+
+.menu-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu__item {
+  width: 65px;
+  margin: 10px;
+}
+
+.menu__icon {
+  max-width: 50px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.menu__item__caption {
+  text-align: center;
+  margin-top: 5px;
+}

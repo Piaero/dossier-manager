@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
-import logo from './logo.svg';
-
 import './App.css';
+
+import { Menu } from './components/Menu/Menu.js';
 
 class App extends Component {
   state = {
@@ -12,7 +12,7 @@ class App extends Component {
   };
 
   render() {
-    return <section>Promenada Dossier Manager</section>;
+    return <Menu />;
   }
 }
 
