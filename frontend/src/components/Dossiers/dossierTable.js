@@ -1,6 +1,8 @@
 import React from 'react';
 import { useTable } from 'react-table';
 
+import { DossierAdd } from './DossierAdd.js';
+
 export const DossierTable = ({ dossiers }) => {
   const data = React.useMemo(() => dossiers, []);
   const columns = React.useMemo(
@@ -22,6 +24,10 @@ export const DossierTable = ({ dossiers }) => {
         accessor: 'paymentStatus',
       },
       {
+        Header: 'Prowizja',
+        accessor: 'commission',
+      },
+      {
         Header: 'L. osób',
         accessor: 'pax',
       },
@@ -40,6 +46,14 @@ export const DossierTable = ({ dossiers }) => {
       {
         Header: 'Wyjazd (miasto)',
         accessor: 'cityOfDeparture',
+      },
+      {
+        Header: 'Czas pobytu',
+        accessor: 'stayDuration',
+      },
+      {
+        Header: 'Transport',
+        accessor: 'transportation',
       },
       {
         Header: 'Pilot',
@@ -96,6 +110,7 @@ export const DossierTable = ({ dossiers }) => {
 
   return (
     <div>
+      <DossierAdd columns={columns} />
       DossiersTable
       <table {...getTableProps()}>
         <caption>Dossiers: </caption>
