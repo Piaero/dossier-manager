@@ -16,6 +16,10 @@ export const DossierTable = ({ dossiers }) => {
         accessor: 'accountingNumber',
       },
       {
+        Header: 'nazwa',
+        accessor: 'name',
+      },
+      {
         Header: 'Faktura',
         accessor: 'invoiceStatus',
       },

@@ -72,14 +72,13 @@ export class DossierAdd extends React.Component {
     dossier.accountingNumber = this.accountingNumber.current.value;
     dossier.invoiceStatus = this.invoiceStatus.current.value;
     dossier.commission = this.commission.current.value;
-
     dossier.pax = this.pax.current.value;
     dossier.dateOfArrival = this.dateOfArrival.current.value;
     dossier.dateOfDeparture = this.dateOfDeparture.current.value;
     dossier.cityOfArrival = this.cityOfArrival.current.value;
     dossier.cityOfDeparture = this.cityOfDeparture.current.value;
-    // dossier.stayDuration = this.stayDuration.current.value;
-    // dossier.transportation = this.transportation.current.value;
+    dossier.stayDuration = this.stayDuration.current.value;
+    dossier.transportation = this.transportation.current.value;
     dossier.pilot = this.pilot.current.value;
     dossier.pilotStatus = this.pilotStatus.current.value;
     dossier.responsible = this.responsible.current.value;
