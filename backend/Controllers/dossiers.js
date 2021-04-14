@@ -22,7 +22,6 @@ router.get('/dossiers', (req, res) => {
     .find()
     .toArray()
     .then((results) => {
-      console.log(results);
       res.json(results);
     })
     .catch((error) => console.error(error));

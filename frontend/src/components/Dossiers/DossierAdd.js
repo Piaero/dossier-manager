@@ -44,6 +44,7 @@ export class DossierAdd extends React.Component {
 
     this.number = React.createRef();
     this.accountingNumber = React.createRef();
+    this.name = React.createRef();
     this.invoiceStatus = React.createRef();
     this.commission = React.createRef();
     this.pax = React.createRef();
@@ -70,6 +71,7 @@ export class DossierAdd extends React.Component {
 
     dossier.number = this.number.current.value;
     dossier.accountingNumber = this.accountingNumber.current.value;
+    dossier.name = this.name.current.value;
     dossier.invoiceStatus = this.invoiceStatus.current.value;
     dossier.commission = this.commission.current.value;
     dossier.pax = this.pax.current.value;
@@ -119,6 +121,9 @@ export class DossierAdd extends React.Component {
                 </td>
                 <td>
                   <input type='text' ref={this.accountingNumber} />
+                </td>
+                <td>
+                  <input type='text' ref={this.name} />
                 </td>
                 <td>
                   <input
