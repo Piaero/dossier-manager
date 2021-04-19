@@ -8,6 +8,8 @@ export const DossiersAPI = {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ dossier }),
     };
-    fetch('/add-dossier', requestOptions);
+    return fetch('/add-dossier', requestOptions).then((response) =>
+      response.json()
+    );
   },
 };

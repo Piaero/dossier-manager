@@ -1,8 +1,6 @@
 import React from 'react';
-
 import { DossiersAPI } from './DossiersAPI.js';
-
-import './AddDossier.css';
+import './Dossiers.css';
 
 export class AddDossier extends React.Component {
   constructor(props) {
@@ -94,10 +92,10 @@ export class AddDossier extends React.Component {
     dossier.createdBy = this.createdBy.current.value;
     dossier.modifiedBy = this.modifiedBy.current.value;
 
-    DossiersAPI.addDossier(dossier).then((result) => console.log(result));
+    DossiersAPI.addDossier(dossier).then((result) =>
+      this.props.setDossiers(result)
+    );
 
-    // alert(JSON.stringify(dossier));
-    // this.props.add(dossier);
     event.preventDefault();
   }
 
@@ -265,11 +263,6 @@ export class AddDossier extends React.Component {
           </table>
           <input type='submit' value='Dodaj' />
         </form>
-
-        <br />
-        <br />
-        <br />
-        <br />
       </section>
     );
   }

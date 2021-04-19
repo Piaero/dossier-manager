@@ -27,21 +27,20 @@ router.get('/dossiers', (req, res) => {
     .catch((error) => console.error(error));
 });
 
-router.put('/add-dossier', (req, res) => {
+router.put('/add-dossier', async (req, res) => {
+  await client
+    .db('dossier-manager')
+    .collection('dossiers')
+    .insertOne(req.body.dossier);
+
   client
     .db('dossier-manager')
     .collection('dossiers')
-    .insertOne(req.body.dossier)
-    .then(
-      client
-        .db('dossier-manager')
-        .collection('dossiers')
-        .find()
-        .toArray()
-        .then((results) => {
-          res.json(results);
-        })
-    );
+    .find()
+    .toArray()
+    .then((results) => {
+      res.json(results);
+    });
 });
 
 module.exports = router;
