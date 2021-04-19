@@ -93,6 +93,7 @@ export class DossierAdd extends React.Component {
     dossier.modifiedBy = this.modifiedBy.current.value;
 
     alert(JSON.stringify(dossier));
+    this.props.add(dossier);
     event.preventDefault();
   }
 
