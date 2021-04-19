@@ -1,13 +1,17 @@
 import React from 'react';
 import { useTable, useSortBy } from 'react-table';
 
-import { DossierAdd } from './DossierAdd.js';
+import { AddDossier } from './AddDossier.js';
+import { DossiersAPI } from './DossiersAPI.js';
 
 export const DossierTable = (props) => {
-  const [dane, setDane] = React.useState(props.data);
+  const [dane, setDane] = React.useState([]);
+
+  React.useEffect(() => {
+    DossiersAPI.getDossiers().then((result) => setDane(result));
+  }, []);
 
   const columns = React.useMemo(() => props.columns, [props.columns]);
-
   const data = React.useMemo(() => dane, [dane]);
 
   const {
@@ -25,9 +29,8 @@ export const DossierTable = (props) => {
 
   return (
     <section>
-      <DossierAdd columns={columns} add={add} />
+      <AddDossier columns={columns} add={add} setDane={setDane} />
       DossiersTable
-      <button onClick={() => add()}>Dodaj wewnątrz</button>
       <table {...getTableProps()}>
         <caption>Dossiers: </caption>
 

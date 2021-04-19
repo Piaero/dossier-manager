@@ -1,8 +1,10 @@
 import React from 'react';
 
-import './DossierAdd.css';
+import { DossiersAPI } from './DossiersAPI.js';
 
-export class DossierAdd extends React.Component {
+import './AddDossier.css';
+
+export class AddDossier extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -92,8 +94,10 @@ export class DossierAdd extends React.Component {
     dossier.createdBy = this.createdBy.current.value;
     dossier.modifiedBy = this.modifiedBy.current.value;
 
-    alert(JSON.stringify(dossier));
-    this.props.add(dossier);
+    DossiersAPI.addDossier(dossier).then((result) => console.log(result));
+
+    // alert(JSON.stringify(dossier));
+    // this.props.add(dossier);
     event.preventDefault();
   }
 

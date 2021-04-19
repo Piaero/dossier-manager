@@ -99,63 +99,22 @@ export const DossierPage = () => {
     },
   ];
 
-  useEffect(() => {
-    fetch('/dossiers')
-      .then((res) => res.json())
-      .then((data) => setDossiers(data));
-  }, [dossiers]);
+  //   const add = (object) => {
+  //     console.log(`clicked function in DossierPage`);
+  //     setDossiers((oldArray) => [...oldArray, object]);
+  //   };
 
-  const object = {
-    _id: {
-      $oid: '6050aa416277b5bd4c05f5cb',
-    },
-    number: 1,
-    accountingNumber: 0,
-    name: '',
-    invoiceStatus: '',
-    paymentStatus: '',
-    commission: '',
-    pax: '',
-    dateOfArrival: {
-      $date: '2001-02-28T23:00:00.000Z',
-    },
-    dateOfDeparture: {
-      $date: '2001-03-31T22:00:00.000Z',
-    },
-    cityOfArrival: '',
-    cityOfDeparture: '',
-    stayDuration: 0,
-    transportation: '',
-    pilot: '',
-    pilotStatus: '',
-    responsible: [''],
-    dossierStatus: '',
-    productType: '',
-    notes: '',
-    dateCreated: {
-      $date: '2000-12-31T23:00:00.000Z',
-    },
-    dateModified: {
-      $date: '2001-01-31T23:00:00.000Z',
-    },
-    createdBy: '',
-    modifiedBy: '',
-    snapshots: [''],
-  };
-
-  const add = () => {
-    console.log(`clicked`);
-    console.log(dossiers);
-    setDossiers((oldArray) => [...oldArray, object]);
-  };
-
-  if (!dossiers.length) {
+  if (dossiers.length) {
     return <div>Ładowanie dossiers...</div>;
   } else {
     return (
       <section>
-        <button onClick={add}>klik</button>
-        <DossierTable data={dossiers} columns={columns} add={add} />
+        {/* <button onClick={add}>klik</button> */}
+        <DossierTable
+          data={dossiers}
+          columns={columns}
+          // add={add}
+        />
       </section>
     );
   }

@@ -27,6 +27,7 @@ client.connect((err) => {
 });
 
 app.get('/dossiers', dossiers);
+app.put('/add-dossier', dossiers);
 
 // Heroku deployment compatibility:
 if (process.env.NODE_ENV === 'production') {
