@@ -92,9 +92,11 @@ export class AddDossier extends React.Component {
     dossier.createdBy = this.createdBy.current.value;
     dossier.modifiedBy = this.modifiedBy.current.value;
 
-    DossiersAPI.addDossier(dossier).then((result) =>
-      this.props.setDossiers(result)
-    );
+    DossiersAPI.addDossier(dossier).then(() => {
+      DossiersAPI.getDossiers().then((result) =>
+        this.props.setDossiers(result)
+      );
+    });
 
     event.preventDefault();
   }

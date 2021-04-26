@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { useTable } from 'react-table';
-
 import { AddDossier } from './AddDossier.js';
 import { DossiersAPI } from './DossiersAPI.js';
 

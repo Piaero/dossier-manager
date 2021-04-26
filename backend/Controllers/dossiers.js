@@ -31,16 +31,10 @@ router.put('/add-dossier', async (req, res) => {
   await client
     .db('dossier-manager')
     .collection('dossiers')
-    .insertOne(req.body.dossier);
-
-  client
-    .db('dossier-manager')
-    .collection('dossiers')
-    .find()
-    .toArray()
-    .then((results) => {
-      res.json(results);
-    });
+    .insertOne(req.body.dossier)
+    .then(
+      res.json(`Dossier number: ${req.body.dossier.number} added to Database.`)
+    );
 });
 
 module.exports = router;
