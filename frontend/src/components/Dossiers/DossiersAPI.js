@@ -9,6 +9,6 @@ export const DossiersAPI = {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ dossier }),
     };
-    return fetch('/add-dossier', requestOptions);
+    return fetch('/dossiers', requestOptions);
   },
 };
