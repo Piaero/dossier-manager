@@ -27,8 +27,8 @@ router.get('/dossiers', (req, res) => {
     .catch((error) => console.error(error));
 });
 
-router.put('/dossiers', async (req, res) => {
-  await client
+router.post('/dossiers', (req, res) => {
+  client
     .db('dossier-manager')
     .collection('dossiers')
     .insertOne(req.body.dossier)
